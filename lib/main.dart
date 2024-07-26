@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:notes_local_storage_hive/pages/homePage.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
   await Hive.initFlutter();
@@ -16,11 +17,12 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+          textTheme: GoogleFonts.nunitoTextTheme(Theme.of(context).textTheme),
           colorScheme: ColorScheme.fromSeed(
-        seedColor: Colors.purple,
-        primary: Colors.purple,
-        secondary: Colors.purple[300],
-      )),
+            seedColor: Colors.purple,
+            primary: Colors.purple[500],
+            secondary: Colors.purple[300],
+          )),
       home: const Homepage(),
     );
   }

@@ -22,18 +22,18 @@ class showActionDialog extends StatelessWidget {
               ))),
       actions: [
         ElevatedButton(
-          onPressed: onSave,
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Theme.of(context).secondaryHeaderColor,
-          ),
-          child: const Text('Save'),
-        ),
-        ElevatedButton(
           onPressed: onCancel,
           style: ElevatedButton.styleFrom(
             backgroundColor: Theme.of(context).secondaryHeaderColor,
           ),
           child: const Text('Cancel'),
+        ),
+        ElevatedButton(
+          onPressed: onSave,
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Theme.of(context).secondaryHeaderColor,
+          ),
+          child: const Text('Save'),
         ),
       ],
     );

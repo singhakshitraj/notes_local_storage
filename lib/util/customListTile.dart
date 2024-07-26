@@ -23,7 +23,7 @@ class customListTile extends StatelessWidget {
           motion: StretchMotion(),
           children: [
             SlidableAction(
-              backgroundColor: Theme.of(context).secondaryHeaderColor,
+              backgroundColor: Theme.of(context).primaryColor,
               onPressed: deleteFun,
               icon: Icons.delete,
               borderRadius: BorderRadius.circular(10),
@@ -31,12 +31,18 @@ class customListTile extends StatelessWidget {
           ],
         ),
         child: ListTile(
-          //tileColor: Colors.cyanAccent,
+          tileColor: isChecked ? Colors.red[300] : Colors.green[100],
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          contentPadding: EdgeInsets.all(8),
           title: Text(
             noteText,
             style: isChecked
-                ? const TextStyle(decoration: TextDecoration.lineThrough)
-                : const TextStyle(decoration: TextDecoration.none),
+                ? const TextStyle(
+                    decoration: TextDecoration.lineThrough, fontSize: 18)
+                : const TextStyle(
+                    decoration: TextDecoration.none, fontSize: 18),
           ),
           leading: Checkbox(
             onChanged: onChanged,

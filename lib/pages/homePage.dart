@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:notes_local_storage_hive/util/customListTile.dart';
 import 'package:notes_local_storage_hive/util/showActionDialog.dart';
-
 import '../data/database.dart';
 
 class Homepage extends StatefulWidget {
@@ -37,25 +36,35 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('H O M E P A G E'),
+        title: const Text('H O M E P A G E',
+            style: TextStyle(color: Colors.white)),
         elevation: 0,
         backgroundColor: Theme.of(context).primaryColor,
       ),
-      body: ListView.builder(
-          itemCount: db.myNotes.length,
-          itemBuilder: (context, index) {
-            return customListTile(
-              onChanged: (p0) {
-                setState(() {
-                  db.myNotes[index][1] = !db.myNotes[index][1];
-                });
-                db.updateList();
-              },
-              isChecked: db.myNotes[index][1],
-              noteText: db.myNotes[index][0],
-              deleteFun: (context) => _deleteFxn(index),
-            );
-          }),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 10,
+          ),
+          Expanded(
+            child: ListView.builder(
+                itemCount: db.myNotes.length,
+                itemBuilder: (context, index) {
+                  return customListTile(
+                    onChanged: (p0) {
+                      setState(() {
+                        db.myNotes[index][1] = !db.myNotes[index][1];
+                      });
+                      db.updateList();
+                    },
+                    isChecked: db.myNotes[index][1],
+                    noteText: db.myNotes[index][0],
+                    deleteFun: (context) => _deleteFxn(index),
+                  );
+                }),
+          ),
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showDialog(
@@ -78,7 +87,7 @@ class _HomepageState extends State<Homepage> {
                 );
               });
         },
-        child: Icon(Icons.exposure_plus_1_outlined),
+        child: Icon(Icons.add),
       ),
     );
   }
