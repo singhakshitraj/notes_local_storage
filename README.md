@@ -1,3 +1,3 @@
 # notes_local_storage_hive
 
-A new Flutter project.
+Simple Notes Application With Flutter which stores the data locally on the device with Hive.
