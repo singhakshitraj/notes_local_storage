@@ -19,9 +19,9 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
           textTheme: GoogleFonts.nunitoTextTheme(Theme.of(context).textTheme),
           colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.purple,
-            primary: Colors.purple[500],
-            secondary: Colors.purple[300],
+            seedColor: Colors.yellow,
+            primary: Colors.yellow[500],
+            secondary: Colors.yellow[300],
           )),
       home: const Homepage(),
     );

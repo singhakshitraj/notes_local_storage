@@ -13,6 +13,7 @@ class showActionDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
+      //backgroundColor: Theme.of(context).primaryColor,
       title: TextField(
           controller: control,
           decoration: InputDecoration(
@@ -24,14 +25,14 @@ class showActionDialog extends StatelessWidget {
         ElevatedButton(
           onPressed: onCancel,
           style: ElevatedButton.styleFrom(
-            backgroundColor: Theme.of(context).secondaryHeaderColor,
+            backgroundColor: Colors.black,
           ),
           child: const Text('Cancel'),
         ),
         ElevatedButton(
           onPressed: onSave,
           style: ElevatedButton.styleFrom(
-            backgroundColor: Theme.of(context).secondaryHeaderColor,
+            backgroundColor: Colors.black,
           ),
           child: const Text('Save'),
         ),
